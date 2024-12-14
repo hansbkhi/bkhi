@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 267 100% 61%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 267 70% 94%;
+    --secondary-foreground: 267 100% 61%;
+    --muted: 267 70% 94%;
+    --muted-foreground: 267 30% 40%;
+    --accent: 267 100% 61%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 267 70% 94%;
+    --input: 267 70% 94%;
+    --ring: 267 100% 61%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  html {
+    @apply overflow-x-hidden;
+  }
+}
+
+/* Mobile-first responsive classes */
+.container-custom {
+  @apply w-full px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl;
+}
+
+.section-padding {
+  @apply py-8 sm:py-12 md:py-16 lg:py-24;
+}
+
+.grid-layout {
+  @apply grid gap-4 sm:gap-6 lg:gap-8;
+}
+
+.card-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+}
+
+/* Mobile optimizations */
+.mobile-menu {
+  @apply fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out;
+}
+
+/* Touch-friendly buttons */
+button, 
+[role="button"],
+a {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Improved form elements for mobile */
+input,
+select,
+textarea {
+  @apply text-base leading-relaxed;
+  font-size: 16px !important; /* Prevent zoom on iOS */
+}
+
+/* Responsive typography */
+.h1 {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+}
+
+.h2 {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold;
+}
+
+.h3 {
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold;
+}
+
+.text-body {
+  @apply text-sm sm:text-base;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
